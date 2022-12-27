@@ -10,7 +10,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title> WAAM </title>
+    <title> SLM </title>
 
     <style>
       * {
@@ -130,10 +130,9 @@
 
       <main6 style="float: right; max-height: 80%;">
         <!-- <img src="p1.png" style=" justify-content: center; align-items: center; text-align: center; width: 90%; max-height: 200px; "> -->
-        <div class="solid" id="myPlot" style="height: 5%; max-height: 220px;"></div>
-        <div class="solid" id="myPlot1" style="height: 5%; max-height: 220px;"></div>
-        <div class="solid" id="myPlot2" style="height: 5%; max-height: 220px;"></div>
-        <div class="solid" id="myPlot3" style="height: 5%; max-height: 220px;"></div>
+        <div class="solid" id="myPlot" style="height: 5%; max-height: 300px;"></div>
+        <div class="solid" id="myPlot1" style="height: 5%; max-height: 300px;"></div>
+        <div class="solid" id="myPlot2" style="height: 5%; max-height: 300px;"></div>
       </main6>
 
     </main>
@@ -150,24 +149,24 @@
 
     firebase
     .database()
-    .ref("WAAM")
-    .on("value", function(snap){if(snap.val().control == 3){location.reload();}})
+    .ref("SLM")
+    .on("value", function(snap){if(snap.val().control == 2){location.reload();}})
 
     firebase
     .database()
-    .ref("WAAM")
-    .update({Print: 0, control: 0}) 
+    .ref("SLM")
+    .update({print: 0, control: 0}) 
     
     firebase
     .database()
-    .ref("WAAM")
+    .ref("SLM")
     .on("value", function (snap) {
 
-      if (snap.val().Print == 1){
+      if (snap.val().print == 1){
         firebase
         .database()
         .ref()
-        .update({Print: 0, control: 2}) 
+        .update({print: 0}) 
         
         let wspFrame = document.getElementById('frame').contentWindow;
         wspFrame.focus();
