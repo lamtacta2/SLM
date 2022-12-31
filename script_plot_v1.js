@@ -2,9 +2,11 @@ var layout = {xaxis: {title: "time (s)"}, yaxis: {title: "Temperature (<sup>o</s
 var layout1 = {xaxis: {title: "time (s)"}, yaxis: {title: "Temperature (<sup>o</sup>C)"}, title: "Clab 1322"};
 var layout2 = {xaxis: {title: "time (s)"}, yaxis: {title: "Temperature (<sup>o</sup>C)"}, title: "Clab 19299"};
 
-Plotly.newPlot("myPlot",layout);
-Plotly.newPlot("myPlot1",layout1);  
-Plotly.newPlot("myPlot2",layout2);  
+var demo = [{x: 0, y: 0, mode:"lines"}];
+
+Plotly.newPlot("myPlot", demo, layout);
+Plotly.newPlot("myPlot1", demo, layout1);  
+Plotly.newPlot("myPlot2", demo, layout2);  
 
 firebase
 .database()
